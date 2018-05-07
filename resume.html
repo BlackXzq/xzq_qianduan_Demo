@@ -10,6 +10,7 @@
 		}
 		h2 {
 			text-align: center;
+			color: green;
 		}
 		span {
 			font-weight: bold;
@@ -43,30 +44,45 @@
 			border-top: 1px solid #eee;
 		}
 		
+		.info-content {
+			display: flex;
+			align-items: center;
+		}
+		
+		.info-content img {
+			width: 80px;
+			height: 80px;
+		}
+		
+		.info-de p {
+			margin: 10px 20px;
+			padding: 0px;
+		}
+		.green {
+			color: green;
+		}
+		
+		
 	
 	</style>
 	
 	<body>
 		<h2>简历</h2>
 		<div class="userinfo">
-			<p class="userTi">个人简介</p>
-			<div>
-				<span>姓名：</span>徐翊扬
-			</div>
-			<div>
-				<span>年龄：</span>19
-			</div>
-			<div>
-				<span>性别：</span>男
-			</div>
-			<div>
-				<span>职位：</span>苹果中国区总裁
+			<p class="userTi green">个人简介</p>
+			<div class="info-content">
+				<img src="http://www.qqzhi.com/uploadpic/2015-01-25/112555929.jpg">
+				<div class="info-de">
+					<p><span>姓名：</span>徐翊扬</p>
+					<p><span>年龄：</span>19</p>
+					<p><span>职位：</span>苹果中国区总裁</p>
+				</div>
 			</div>
 		</div>
 		<div class="project">
-			<p class="project-title">项目经验</p>
+			<p class="project-title green">项目经验</p>
 			<div class="project-item">
-				<p class="project-item-A">A项目</p>
+				<p class="project-item-A green">A项目</p>
 				<p><span>项目描述：</span>AppStore运营</p>
 				<p><span>责任描述：</span></p>
 				<ul>
@@ -76,7 +92,7 @@
 			</div>
 			
 			<div class="project-item">
-				<p class="project-item-A">B项目</p>
+				<p class="project-item-A green">B项目</p>
 				<p><span>项目描述：</span>iPhoneX设计</p>
 				<p><span>责任描述：</span></p>
 				<ul>
