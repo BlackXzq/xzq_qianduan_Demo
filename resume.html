@@ -6,7 +6,11 @@
 	</head>
 	<style>
 		body {
+			width: 100%;
+			height: 100%;
 			margin: 50px;
+			background: url("https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3644865308,1300855991&fm=27&gp=0.jpg") no-repeat;
+			background-size: 100% 100%;
 		}
 		h2 {
 			text-align: center;
@@ -62,6 +66,21 @@
 			color: green;
 		}
 		
+		.contentTap:hover {
+			background: #eee;
+		}
+		
+		li a {
+			display: block;
+			color: blue;
+			text-decoration: none;
+		}
+		
+		li a:hover {
+			color: white;
+			background: #999999;
+		}
+		
 		
 	
 	</style>
@@ -70,7 +89,7 @@
 		<h2>简历</h2>
 		<div class="userinfo">
 			<p class="userTi green">个人简介</p>
-			<div class="info-content">
+			<div class="info-content contentTap">
 				<img src="http://www.qqzhi.com/uploadpic/2015-01-25/112555929.jpg">
 				<div class="info-de">
 					<p><span>姓名：</span>徐翊扬</p>
@@ -81,23 +100,25 @@
 		</div>
 		<div class="project">
 			<p class="project-title green">项目经验</p>
-			<div class="project-item">
+			<div class="project-item contentTap">
 				<p class="project-item-A green">A项目</p>
 				<p><span>项目描述：</span>AppStore运营</p>
 				<p><span>责任描述：</span></p>
 				<ul>
 					<li>推进大中华地区，Apple推广，用户体验</li>
 					<li>没事坐等数钱</li>
+					<li><a href="#A">A项目文档地址</a></li>
 				</ul>
 			</div>
 			
-			<div class="project-item">
+			<div class="project-item contentTap">
 				<p class="project-item-A green">B项目</p>
 				<p><span>项目描述：</span>iPhoneX设计</p>
 				<p><span>责任描述：</span></p>
 				<ul>
 					<li>负责iPhoenX设计</li>
 					<li>iPhoneX芯片开发</li>
+					<li><a href="#B">B项目文档地址</a></li>
 				</ul>
 			</div>
 		</div>
