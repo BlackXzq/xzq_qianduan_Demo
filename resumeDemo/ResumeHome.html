@@ -4,57 +4,97 @@
 		<meta charset="UTF-8">
 		<title>首页</title>
 	</head>
-	<style>
-		ul {
-			list-style-type: none;
-			width: 200px;
-			background: #eee;
-			box-sizing: border-box;
-			margin: 0;
-			padding: 0;
-		}
-		li {
-			display: block;
-			width: 100%;
-			height: 100px;
-			line-height: 100px;
-			border-bottom: 1px solid #FFFFFF;
-			text-align: center;
-		}
-		
-		li:hover {
-			background-color: #999999;
-		}
-		li a {
-			text-decoration: none;
-		}
-		
-	</style>
+	<link rel="stylesheet" href="ResumeHome.css" />
 	<body>
 		<ul>
-			<li><a id="resume1" href="#resume1" onclick="gotoResume(this)">简历一</a></li>
-			<li><a id="resume2" href="#resume2" onclick="gotoResume(this)">简历二</a></li>
-			<li><a id="resume3" href="#resume3" onclick="gotoResume(this)">简历三</a></li>
+			<li id="resume1" onclick="gotoResume(this)">简历一</li>
+			<li id="resume2" onclick="gotoResume(this)">简历二</li>
+			<li id="resume3" onclick="gotoResume(this)">简历三</li>
 		</ul>
+		<div class="content-resume" id="content-resume1">
+			<h1>简历</h1>
+			<h3>基本信息</h3>
+			<p>
+				<span>姓名&nbsp</span>徐翊扬&nbsp&nbsp&nbsp&nbsp
+				<span>性别&nbsp</span>男&nbsp&nbsp&nbsp&nbsp
+				<span>应聘职位&nbsp</span>web前端主管
+				
+			</p>
+			<h3>联系方式</h3>
+			<p>
+				<span>手机&nbsp</span>15812349876&nbsp&nbsp&nbsp&nbsp
+				<span>Email&nbsp</span><a href="#">blackxzq@163.com</a>&nbsp&nbsp&nbsp&nbsp
+				<span>个人主页&nbsp</span><a href="#">GitHub</a>
+			</p>
+			<h3>能力描述</h3>
+			<p><span>技术能力</span><br />熟练掌握HTML、CSS、JS、C、C++多种语言</p>
+			<p><span>综合能力</span><br />良好的沟通、主动积极、勤奋学习</p>
+			
+			<h3>教育经历</h3>
+			<p><span>研究生</span><br />百度前端技术学院研究生院</p>
+			<p><span>本科</span><br />百度前端技术学院</p>
+			
+			<h3>项目经历</h3>
+			<p><span>人类简史</span><br />主要项目开发工程师，项目经理</p>
+			<p><span>BaiDu</span><br />参与百度搜索引擎的开发</p>
+		</div>
+		<div class="content-resume" id="content-resume2">
+			<div class="resume2-left">
+				简历
+			</div>
+			<div class="resume2-right">
+				<h3>基本信息</h3>
+				<p>
+					<span>姓名&nbsp</span>徐翊扬&nbsp&nbsp&nbsp&nbsp
+					<span>性别&nbsp</span>男&nbsp&nbsp&nbsp&nbsp
+					<span>应聘职位&nbsp</span>web前端主管
+				</p>
+				<h3>联系方式</h3>
+				<p>
+					<span>手机&nbsp</span>15812349876&nbsp&nbsp&nbsp&nbsp
+					<span>Email&nbsp</span><a href="#">blackxzq@163.com</a>&nbsp&nbsp&nbsp&nbsp
+					<span>个人主页&nbsp</span><a href="#">GitHub</a>
+				</p>
+				<h3>能力描述</h3>
+				<p><span>技术能力</span><br />熟练掌握HTML、CSS、JS、C、C++多种语言</p>
+				<p><span>综合能力</span><br />良好的沟通、主动积极、勤奋学习</p>
+			
+				<h3>教育经历</h3>
+				<p><span>研究生</span><br />百度前端技术学院研究生院</p>
+				<p><span>本科</span><br />百度前端技术学院</p>
+			
+				<h3>项目经历</h3>
+				<p><span>人类简史</span><br />主要项目开发工程师，项目经理</p>
+				<p><span>BaiDu</span><br />参与百度搜索引擎的开发</p>
+			</div>
+		</div>
+		<div class="content-resume" id="content-resume3">
+			resume3
+		</div>
+		
 	</body>
 	
 	<script>
 		
 		function gotoResume(el) {
-			var currentId = el.id
-			var hrefLink = ""
-			switch(currentId) {
-				case "resume1": 
-					hrefLink = "resume1.html";
-					break;
-				case "resume2":
-					hrefLink = "resume2.html";
-					break;
-				case "resume3": 
-					hrefLink = "resume3.html";
-					break;
+			
+			var childs = el.parentNode.children;
+			for (var i=0; i<childs.length; i++) {
+				var templi = childs[i];
+				var reg = new RegExp('(\\s|^)' + resumeActive + '(\\s|$)'); 
+    				obj.className = obj.className.replace(reg, ' '); 
 			}
-			window.location.href = hrefLink;
+			
+			el.className += " resumeActive";
+			var currentId = el.id
+			var els = document.getElementsByClassName("content-resume");
+			for (var i=0; i<els.length; i++) {
+				var temDiv = els[i];
+				temDiv.style.display = "none";
+			}
+			var useID = "content-" + currentId;
+			var showDiv = document.getElementById(useID);
+			showDiv.style.display = "block";
 		}
 	</script>
 </html>
