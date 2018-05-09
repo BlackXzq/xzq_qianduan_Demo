@@ -7,11 +7,12 @@
 	<link rel="stylesheet" href="ResumeHome.css" />
 	<body>
 		<ul>
-			<li id="resume1" onclick="gotoResume(this)">简历一</li>
+			<li class="resumeActive" id="resume1" onclick="gotoResume(this)">简历一</li>
 			<li id="resume2" onclick="gotoResume(this)">简历二</li>
 			<li id="resume3" onclick="gotoResume(this)">简历三</li>
 		</ul>
-		<div class="content-resume" id="content-resume1">
+		<div>
+			<div class="content-resume" id="content-resume1">
 			<h1>简历</h1>
 			<h3>基本信息</h3>
 			<p>
@@ -71,6 +72,9 @@
 		<div class="content-resume" id="content-resume3">
 			resume3
 		</div>
+			
+		</div>
+		
 		
 	</body>
 	
@@ -81,8 +85,8 @@
 			var childs = el.parentNode.children;
 			for (var i=0; i<childs.length; i++) {
 				var templi = childs[i];
-				var reg = new RegExp('(\\s|^)' + resumeActive + '(\\s|$)'); 
-    				obj.className = obj.className.replace(reg, ' '); 
+				var reg = new RegExp('(\\s|^)' + "resumeActive" + '(\\s|$)'); 
+    				templi.className = templi.className.replace(reg, ' '); 
 			}
 			
 			el.className += " resumeActive";
