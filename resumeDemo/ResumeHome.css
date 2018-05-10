@@ -26,13 +26,22 @@ li:hover {
 
 
 .content-resume {
-	float: left;
 	margin: 10px;
 	margin-left: 210px;
-	width: 70%;
+	width: calc(100%-400px);
 	border: 1px solid #eee;
 	padding: 5px;
 	overflow: hidden;
+}
+
+.resume2back {
+	display: flex;
+	height: 100%;
+}
+.resume2content {
+	float: left;
+	height: 100%;
+	background-color: cornflowerblue;
 }
 
 span {
@@ -52,16 +61,17 @@ span {
 	width: 100px;
 	text-align: center;
 	color: white;
-	background-color: cornflowerblue;
 	padding-top: 100px;
 	padding-bottom: 300px;
 	font-size: 30px;
-	height: 300px;
+	height: 100%;
 }
 
 .resume2-right {
 	float: left;
-	margin-left: 20px;
+	padding-left: 20px;
+	background-color: white;
+	width: calc(100%-100px);
 }
 
 .resumeActive {
