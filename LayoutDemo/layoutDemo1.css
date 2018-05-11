@@ -152,8 +152,12 @@ li {
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
 	color: #333;
-	
 }
+.nav-list-normal a {
+	text-decoration: none;
+	color: #333;
+}
+
 
 .nl_active {
 	background-color: white;
