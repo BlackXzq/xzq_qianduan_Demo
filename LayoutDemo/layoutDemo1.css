@@ -172,6 +172,7 @@ li {
 	margin:0 auto;
 	margin-top: 10px;
 	display: flex;
+	flex-direction: row;
 	justify-content: space-between;
 }
 
@@ -179,13 +180,15 @@ li {
 	border: 1px solid #ddd;
 	text-align: center;
 	background-color: white;
-	/*height: 150px;*/
-	/*line-height: 110px;*/
 	padding: 80px;
-	/*box-sizing: border-box;*/
-	width: 100%;
 	margin-right: 10px;
 	font-size: 10px;
+	display: inline-flex;
+	justify-content: center;
+	flex-grow: 1;
+}
+.item1 {
+	flex-grow: 2;
 }
 
 .section .sectionItem:last-child {
