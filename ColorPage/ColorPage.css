@@ -374,5 +374,55 @@ ul {
 	margin: 10px auto;
 }
 
+.footer {
+	background-color: black;
+	padding: 1px 0px;
+	min-width: 900px;
+}
+
+.footer_content {
+	width: 900px;
+	margin: 50px auto;
+	background-color: black;
+	display: flex
+}
+
+.selectList_ul {
+	display: flex;
+	width: 500px;
+	justify-content: space-between;
+}
+
+.child_ul {
+	font-size: 12px;
+	color: #666;
+}
+
+.child_ul>li:first-child {
+	font-size: 13px;
+	color: white;
+}
+
+.child_ul li {
+	margin: 20px;
+}
+
+.rightSelect {
+	width: 400px;
+	padding: 20px 10px 10px 120px;
+	box-sizing: border-box;
+}
+ .rightSelect .title {
+ 	color: white;
+ 	margin-bottom: 15px;
+}
+.rightSelect .detail {
+	color: #666;
+	font-size: 13px;
+}
+.rightSelect img {
+	width: 15px;
+	height: 15px;
+}
 
 
