@@ -11,7 +11,7 @@ ul {
 .headImgContent {
 	width: 100%;
 	height: 100%;
-	background: url(images/starsky.jpg) center no-repeat;
+	background: linear-gradient(rgba(20, 20, 20, .65), rgba(20, 20, 20, .65)), url("https://github.com/jinjinjinjinxun/IFE2018/blob/master/basic-college/task9-11/images/banner.png?raw=true") center no-repeat;
 	background-size: 100% 100%;
 	min-width: 800px;
 	margin: 0 auto;
@@ -22,7 +22,7 @@ ul {
 	color: white;
 	text-align: center;
 	padding: 50px auto;
-	padding-top: 100px;
+	padding-top: 150px;
 	font-weight: 200;
 }
 .headImgContent_txt {
@@ -35,8 +35,8 @@ ul {
 .account {
 	width: 800px;
 	margin: 50px auto;
-	margin-bottom: 100px;
-	border: 1px solid #999;
+	margin-bottom: 150px;
+	border: 1px solid #666;
 	box-sizing: border-box;
 }
 .account_Title {
@@ -132,6 +132,88 @@ ul {
 	font-size: 13px;
 	color: #666;
 }
+
+.supportive {
+	background: linear-gradient(rgba(20, 20, 20, .65), rgba(20, 20, 20, .65)),  url("https://github.com/jinjinjinjinxun/IFE2018/blob/master/basic-college/task9-11/images/background-2.png?raw=true") no-repeat center;
+	background-size: 100% 100%;
+	margin-bottom: 50px;
+	position: relative;
+	min-width: 900px;
+}
+
+.supportive_content {
+	width: 1000px;
+	padding: 80px 0px;
+	margin: 0 auto;
+}
+
+.supportive_content .left_content {
+	margin: 50px 50px 50px 80px;
+	width: 400px;
+}
+
+.supportive_content .left_content .title {
+	margin-right: 50px;
+	margin-bottom: 20px;
+	color: #f2f2f2;
+	font-size: 28px;
+}
+.supportive_content .left_content .detail {
+	margin-right: 50px;
+	margin-bottom: 30px;
+	color: #aaa;
+	font-size: 13px;
+}
+.supportive_content .left_content .buttonList {
+	display: flex;
+	justify-content: space-between;
+}
+
+.right_content {
+	position: absolute;
+	overflow: hidden;
+	height: 80%;
+	border: 1px solid #999;
+	border-right: none;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	width: 400px;
+	right: 0px;
+	top: 10%;
+	display: flex;
+	align-items: center;
+	
+}
+.right_content .cirle {
+	margin: 15px;
+	width: 10px;
+	height: 10px;
+	border: 1px solid #999;
+	border-radius: 50%;
+	flex-shrink: 1;
+}
+
+.right_content .ipadBack {
+	background: url("https://github.com/jinjinjinjinxun/IFE2018/blob/master/basic-college/task9-11/images/screen.png?raw=true") no-repeat left;
+	background-size: 100% 100%;
+	width: 600px;
+	height: 300px;
+	flex-shrink: 10;
+}
+
+
+#checkBtn {
+	width: 45%;
+	height: 40px;
+}
+#tryBtn {
+	width: 45%;
+	height: 40px;
+	color: #f2f2f2;
+	background-color: rgba(0,0,0,0);
+	border: 1px solid #999;
+}
+
 
 .tryOur {
 	padding-bottom: 20px;
