@@ -206,6 +206,87 @@ ul {
 	color: #999;
 }
 
+.usershow {
+	border-bottom: 1px solid #f2f2f2;
+}
+
+.usershow_content {
+	width: 800px;
+	margin: 50px auto;
+}
+
+.usershow_content .head .title {
+	font-size: 30px;
+	text-align: center;
+}
+.usershow_content .head .detail {
+	width: 550px;
+	text-align: center;
+	font-size: 14px;
+	color: #999;
+	margin: 10px auto;
+}
+
+.showBack {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin: 50px auto;
+	
+}
+
+.showBack .teacher {
+	width: 385px;
+	height: 280px;
+	margin-bottom: 30px;
+	cursor:pointer;
+	position: relative;
+}
+.teacher .teacherimg {
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+} 
+.teacherimg  img {
+	width: 100%;
+	height: 100%;
+}
+
+.frontContent {
+	background-color: rgba(0,0,0,0.3);
+	width: 385px;
+	height: 280px;
+	z-index: 10;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+	text-align: center;
+}
+
+.frontContent .title {
+	color: white;
+	margin-top: 100px;
+}
+.frontContent .detail {
+	color: #999;
+	margin-top: 10px;
+	font-size: 13px;
+}
+
+.imageList {
+	width: 100%;
+	height: 50px;
+	margin-top: 20px;
+}
+
+.imageList img {
+	margin: 10px;
+	width: 30px;
+	height: 30px;
+}
+
+
 
 
 

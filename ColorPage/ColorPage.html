@@ -104,7 +104,7 @@
 				<div class="txtImg_content">
 					<div class="txtImg_content_item item1">
 						<div class="left_img">
-							<img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=55814725,2167524012&fm=27&gp=0.jpg" />
+							<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1526288330516&di=fd618e2ea95134b42e2d641e81d6ac95&imgtype=0&src=http%3A%2F%2Fwww.ctps.cn%2Fphotonet%2FProfiles2011%2F20140402%2F201442101481257.jpg" />
 						</div>
 						<div class="right_txt">
 							<div class="title">
@@ -131,7 +131,94 @@
 				</div>
 			</div>
 		
+			<!--优秀教师展示-->
+			<div class=" usershow">
+				<div class=" usershow_content">
+					<div class="head">
+						<div class="title"> 
+							Our Awesome Crew
+						</div>
+						<div class="detail">
+							Our unique online teaching style makes learning easy for everyone. Whether you are tyring to land a new job. brush up on your skills.
+						</div>
+					</div>
+					
+					<div class="showBack">
+						<div class="teacher" onmouseover="startIn(this)" onmouseout="leaveOut(this)">
+							<div class="teacherimg">
+								<img src="http://img3.imgtn.bdimg.com/it/u=2031324839,4011225758&fm=200&gp=0.jpg" />
+							</div>
+							<div class="frontContent">
+								<div class="title">Ethan Dutton</div>
+								<div class="detail">SENIOR VISUAL DESIGNER</div>
+								<div class="imageList">
+									<img src="images/dingwei.png"/>
+									<img src="images/phone.png"/>
+									<img src="images/shousuo.png"/>
+								</div>
+							</div>
+						</div>
+					
+						<div class="teacher" onmouseover="startIn(this)" onmouseout="leaveOut(this)">
+							<div class="teacherimg">
+								<img src="http://img3.imgtn.bdimg.com/it/u=2265958070,3862606451&fm=27&gp=0.jpg" />
+							</div>
+							<div class="frontContent">
+								<div class="title">Ethan Dutton</div>
+								<div class="detail">SENIOR VISUAL DESIGNER</div>
+								<div class="imageList">
+									<img src="images/dingwei.png"/>
+									<img src="images/phone.png"/>
+									<img src="images/shousuo.png"/>
+								</div>
+							</div>
+						</div>
+					
+						<div class="teacher" onmouseover="startIn(this)" onmouseout="leaveOut(this)">
+							<div class="teacherimg">
+								<img src="http://a3.topitme.com/e/b6/33/118356627338433b6el.jpg" />
+							</div>
+							<div class="frontContent">
+								<div class="title">Ethan Dutton</div>
+								<div class="detail">SENIOR VISUAL DESIGNER</div>
+								<div class="imageList">
+									<img src="images/dingwei.png"/>
+									<img src="images/phone.png"/>
+									<img src="images/shousuo.png"/>
+								</div>
+							</div>
+						</div>
+					
+						<div class="teacher" onmouseover="startIn(this)" onmouseout="leaveOut(this)">
+							<div class="teacherimg">
+								<img src="http://img4.duitang.com/uploads/item/201504/06/20150406H3041_2di8s.jpeg" />
+							</div>
+							<div class="frontContent">
+								<div class="title">Ethan Dutton</div>
+								<div class="detail">SENIOR VISUAL DESIGNER</div>
+								<div class="imageList">
+									<img src="images/dingwei.png"/>
+									<img src="images/phone.png"/>
+									<img src="images/shousuo.png"/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
 			
 		</div>
 	</body>
+	<script>
+		function startIn(el) {
+			var frontel = el.getElementsByClassName("frontContent")[0];
+			frontel.style.display = "block";
+		}
+		
+		function leaveOut(el) {
+			var frontel = el.getElementsByClassName("frontContent")[0];
+			frontel.style.display = "none";
+		}
+	</script>
 </html>
