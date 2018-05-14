@@ -1,0 +1,12 @@
+
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+.appLink {
+	position: fixed;
+	width: 100px;
+	height: 100%;
+	background-color: #262626;
+}
