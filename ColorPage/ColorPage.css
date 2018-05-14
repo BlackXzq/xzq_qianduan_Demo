@@ -286,8 +286,93 @@ ul {
 	height: 30px;
 }
 
+.contact_content {
+	width: 800px;
+	margin: 50px auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
 
+.contact_content .addEmail {
+	width: 360px;
+	text-align: center;
+	border: 1px solid #999;
+}
 
+.addEmail .title {
+	margin: 30px auto;
+	font-size: 15px;
+	color: #333;
+}
+
+.addEmail .yourName, .addEmail .subject {
+	height: 30px;
+}
+
+.addEmail .message {
+	height: 100px;
+	width: 320px;
+	border: 1px solid #999;
+	margin: 10px auto;
+	padding: 10px 10px;
+	box-sizing: border-box;
+	color: #333;
+}
+
+.addEmail .sendBtn {
+	background-color: black;
+	color: white;
+	height: 40px;
+	margin-bottom: 30px;
+}
+
+.addEmail input {
+	width: 320px;
+	border: 1px solid #999;
+	margin: 10px auto;
+	padding: 0 10px;
+	box-sizing: border-box;
+	color: #333;
+}
+
+.contact_content .contactTxt {
+	width: 340px;
+}
+.contactTxt .title {
+	font-size: 28px;
+	margin-bottom: 20px;
+}
+
+.contactTxt .detail {
+	font-size: 12px;
+	color: #999;
+	margin-bottom: 30px;
+}
+
+.contactTxt .location {
+	background: url(images/dingwei.png) no-repeat;
+	background-position:0px 5px;
+	background-size: 15px 15px;
+	padding-left: 25px;
+	margin: 10px auto;
+}
+
+.contactTxt .phone {
+	background: url(images/phone.png) no-repeat;
+	background-position:0px 5px;
+	background-size: 15px 15px;
+	padding-left: 25px;
+	margin: 10px auto;
+}
+
+.contactTxt .email {
+	background: url(images/duihao.png) no-repeat;
+	background-position:0px 5px;
+	background-size: 15px 15px;
+	padding-left: 25px;
+	margin: 10px auto;
+}
 
 
 
