@@ -90,7 +90,6 @@
 .leftList {
 	width: 400px;
 	border-right: 1px solid #ddd;
-	height: 500px;
 }
 .searchContent {
 	border-bottom: 1px solid #ddd;
@@ -120,5 +119,73 @@
 	background-color: #008000;
 }
 
+.cell {
+	padding: 20px;
+	box-sizing: border-box;
+	border-bottom: 1px solid #ddd;
+}
+.cell.cellActive {
+	border-left: 2px solid #1d94ed;
+}
+
+.cellTitle {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.cell_user {
+	display: flex;
+	align-items: center;
+}
+
+.cell_icon {
+	width: 40px;
+	height:40px;
+	background-color: #6495ED;
+	border-radius: 50%;
+	margin-right: 15px;
+}
+.cell_uName {
+	font-size: 13px;
+	color: #333;
+}
+.cell_uName.uNameActive {
+	color: #1B7DE7;
+}
+.cell_cSource {
+	font-size: 11px;
+	color:#999
+}
+.cell_time {
+	font-size: 11px;
+	color:#999
+}
+.cell_detail {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.cell_Dtxt {
+	display:-webkit-box;
+	-webkit-box-orient:vertical;
+	-webkit-line-clamp:2;
+	overflow:hidden;
+	font-size: 8px;
+	color: #999;
+	flex-shrink: 2;
+}
+.cell_CNum {
+	background-color: #1d94ed;
+	font-size: 10px;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	color: white;
+	border-radius: 10px;
+	flex-shrink: 0;
+}
 
 
