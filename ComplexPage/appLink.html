@@ -5,32 +5,67 @@
 		<title></title>
 	</head>
 	<style>
+		
 		.container {
 			width: 100%;
-			height: 10%;
+			height: 100%;
 		}
 		
 		.container>div {
-			width: 80px;
-			height: 80px;
-			margin: 10px auto;
+			width: 60px;
+			height: 60px;
+			line-height: 60px;
+			margin: 20px auto;
 			text-align: center;
+			border-radius: 50%;
+			cursor:pointer
 		}
 		
 		.div1 {
-			background-color: red;
+			background-color: #1B7DE7;
 		}
 		
 		.div2 {
-			background-color: blue;
+			background-color: #8165DD;
 		}
 		
 		.div3 {
-			background-color: green;
+			background-color: #E73727;
 		}
 		
 		.div4 {
-			background-color: darkturquoise;
+			font-size: 40px;2
+			font-weight: bold;
+			color: #333;
+			border: 3px solid #333;
+		}
+		
+		.footer {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			display: flex;
+			justify-content: space-around;
+			margin: 20px 0px;
+			width: 100%;
+		}
+		
+		.footer>div {
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+			text-align: center;	
+			cursor:pointer		
+		}
+		
+		.leftMenu {
+			margin-left: 10px;
+			background-color: #5F9EA0;
+		}
+		
+		.setting {
+			margin-right: 10px;
+			background-color: #00CED1;
 		}
 		
 	</style>
@@ -39,7 +74,11 @@
 			<div class="div1"></div>
 			<div class="div2"></div>
 			<div class="div3"></div>
-			<div class="div4"></div>
+			<div class="div4">+</div>
+		</div>
+		<div class="footer">
+			<div class="leftMenu"></div>
+			<div class="setting"></div>
 		</div>
 	</body>
 </html>

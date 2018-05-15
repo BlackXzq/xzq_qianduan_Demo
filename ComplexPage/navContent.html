@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;	
+		}
+	
+		.container {
+			width: 100%;
+			height: 100%;
+		}
+		
+		ul>li:first-child {
+			margin-top: 30px;
+		}
+		
+		.li_active {
+			position: relative;
+		}
+		
+		.li_active .selected_tag {
+			position: absolute;
+			background-color: #1d94ed;
+			width: 3px;
+			height: 4px;
+			border-bottom-right-radius: 50%;
+			border-top-right-radius: 50%;
+			top: 10px;
+		}
+		
+		.li_active .li_item .title {
+			color: white;
+		}
+		
+		.li_item:hover:not(.item_header) {
+			color: white;
+			cursor:pointer;
+		}
+				
+		.li_item {
+			margin: 15px 30px;
+			font-size: 13px;
+			font-weight: bold;
+			color: #b7c0cd;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		
+		ul>li:last-child .li_item {
+			padding-bottom: 25px;
+			opacity: 0.8;
+			border-bottom: 0.3px solid #333;
+		}
+		
+		.das_ul>li:last-child .li_item {
+			border-bottom: none;
+		}
+		
+		.item_header {
+			color: #5b6779;
+			font-size: 11px;
+		}
+		
+		.item_header .setICon {
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			background-color: #00CED1;
+		}
+		
+		.li_item .item_nums {
+			background-color: #1d94ed;
+			font-size: 12px;
+			padding: 3px 8px;
+			border-radius: 12px;
+			color: white;
+		}
+		
+		.li_item .item_warn {
+			width: 20px;
+			height: 20px;
+			line-height: 20px;
+			text-align: center;
+			background-color: #e24024;
+			font-size: 12px;
+			border-radius: 50%;
+			color: white;
+		}
+		
+		footer {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			margin: 15px 0px;
+			width: 100%;
+			height: 50px;
+		}
+		footer .content {
+			margin: 0 20px;
+			display: flex;
+			color: white;
+			font-weight: bold;
+			font-size: 12px;
+			justify-content: space-between;
+		}
+		
+		footer .progressBack {
+			margin: 15px 20px;
+			background-color: #333;
+			width: 83%;
+			height: 4px;
+			border-radius: 2px;
+		}
+		
+		.progressBack .value {
+			background: linear-gradient(to right,  #805de6, #9b8ce3);
+			border-radius: 2px;
+			height: 100%;
+			width: 20%;
+		}
+		
+		
+	</style>
+	<body>
+		<div class="container">
+			<nav>
+				<!--MENU section-->
+				<section class="menu">
+					<ul class="menu_ul">
+						<li>
+							<div class="li_item item_header">
+								<div class="title">MENU</div>
+								<div class="setICon"></div>
+							</div>
+						</li>
+						<li>
+							<div class="li_item">
+								<div class="title">Overview</div>
+							</div>
+						</li>
+						<li>
+							<div class="li_item">
+								<div class="title">Sales</div>
+								<div class="item_nums">54</div>
+							</div>
+						</li>
+						<li>
+							<div class="li_item">
+								<div class="title">Your Staff</div>
+							</div>
+						</li>
+						<li>
+							<div class="li_item">
+								<div class="title">Analytics & Trgeting</div>
+							</div>
+						</li>
+						<li>
+							<div class="li_item">
+								<div class="title">What's New</div>
+							</div>
+						</li>
+					</ul>
+				</section>
+				<!--YOUR PRODUCTS-->
+				<section class="yourprod">
+					<ul class="pro_ul">
+						<li>
+							<div class="li_item item_header">
+								<div class="title">YOUR PRODUCTS</div>
+								<div class="setICon"></div>
+							</div>
+						</li>
+						<li>
+							<div class="li_item">
+								<div class="title">Books</div>
+							</div>
+						</li>
+						<li>
+							<div class="li_item">
+								<div class="title">Tutarials</div>
+							</div>
+						</li>
+						<li>
+							<div class="li_item">
+								<div class="title">Stocks</div>
+							</div>
+						</li>
+						<li>
+							<div class="li_item">
+								<div class="title">Infograpics</div>
+							</div>
+						</li>
+
+					</ul>
+				</section>
+				<!--DASHBOARD-->
+				<section>
+					<ul class="das_ul">
+						<li>
+							<div class="li_item item_header">
+								<div class="title">DASHBOARD</div>
+								<div class="setICon"></div>
+							</div>
+						</li>
+						<li class="li_active">
+							<div class="selected_tag"></div>
+							<div class="li_item">
+								<div class="title">Messages</div>
+								<div class="item_nums">21</div>
+							</div>
+						</li>
+						<li>
+							<div class="li_item">
+								<div class="title">Connections</div>
+							</div>
+						</li>
+						<li>
+							<div class="li_item">
+								<div class="title">Integrations</div>
+								<div class="item_warn">!</div>
+							</div>
+						</li>
+						<li>
+							<div class="li_item">
+								<div class="title">Account Setings</div>
+							</div>
+						</li>
+						<li>
+							<div class="li_item">
+								<div class="title">App Setting</div>
+							</div>
+						</li>
+					</ul>
+				</section>
+			</nav>
+			
+			<footer>
+				<div class="content">
+					<div>Monthly Goals</div>
+					<div>$640/$3200</div>
+				</div>
+				<div class="progressBack">
+					<div class="value"></div>
+				</div>
+			</footer>
+		</div>
+	</body>
+	
+	<script>
+		
+	</script>
+</html>
