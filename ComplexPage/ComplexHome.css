@@ -4,17 +4,23 @@
 	padding: 0px;
 }
 
+body {
+	min-width: 600px;
+}
+
 .appLink {
 	position: fixed;
 	width: 100px;
 	height: 100%;
 	background-color: #171C25;
+	z-index: 2;
 }
 
 .appLinkFrame {
 	border: none;
 	width: 100%;
 	height: 100%;
+	z-index: 2;
 }
 
 .nav {
@@ -23,6 +29,7 @@
 	width: 250px;
 	height: 100%;
 	background-color: #1A212E;
+	z-index: 1;
 }
 
 .navContentFrame {
@@ -38,7 +45,8 @@
 }
 
 .header {
-	margin: 20px;
+	/*margin: 20px;*/
+	padding: 20px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -123,6 +131,10 @@
 	padding: 20px;
 	box-sizing: border-box;
 	border-bottom: 1px solid #ddd;
+	cursor: pointer;
+}
+.cell:hover:not(.cellActive) {
+	background-color: #f2f2f2;
 }
 .cell.cellActive {
 	border-left: 2px solid #1d94ed;
@@ -147,11 +159,19 @@
 	border-radius: 50%;
 	margin-right: 15px;
 }
+.cell_icon img {
+	border-radius: 50%;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
 .cell_uName {
 	font-size: 13px;
 	color: #333;
 }
 .cell_uName.uNameActive {
+	font-weight: bold;
 	color: #1B7DE7;
 }
 .cell_cSource {
@@ -187,5 +207,66 @@
 	border-radius: 10px;
 	flex-shrink: 0;
 }
+
+.rightMsDetail {
+	width: 100%;
+	height: 100%;
+	min-width: 500px;
+	min-height: 500px;
+	position: relative;
+}
+
+.rightTop {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	border-bottom: 1px solid #ddd;
+	padding: 18px 30px;
+	height: 71px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.currentUser {
+	display: flex;
+	align-items: center;
+}
+.c_u_Name {
+	font-size: 15px;
+	color: #999;
+	font-weight: bold;
+}
+.c_u_circle {
+	width: 8px;
+	height: 8px;
+	margin-left: 10px;
+	border-radius: 50%;
+	background-color: green;
+	opacity: 0.7;
+}
+
+.rightContent {
+	position: absolute;
+	top: 109px;
+	left: 0px;
+	right: 0px;
+	bottom: 80px;
+}
+
+
+.rightFooter {
+	position: absolute;
+	padding: 30px;
+	height: 80px;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	box-sizing: border-box;
+	background-color: #00CED1;
+}
+
+
 
 
