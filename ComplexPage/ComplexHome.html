@@ -12,28 +12,31 @@
 		<div class="nav">
 			<iframe src="navContent.html" class="navContentFrame"></iframe>
 		</div>
-		<div class="content">
-			<div class="header">
-				<div class="title">Messages</div>
-				<div class="userContent">
-					<div class="userIcon"></div>
-					<div class="userDetail">
-						<div id="userName">Jordan J.</div>
-						<div id="userLevel">Administrayor</div>
-					</div>
-					<div id="downRow">∨</div>
+		<!--头部区域-->
+		<div class="header">
+			<div class="title">Messages</div>
+			<div class="userContent">
+				<div class="userIcon">
+					<img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3602444084,3137231020&fm=27&gp=0.jpg" />
 				</div>
+				<div class="userDetail">
+					<div id="userName">Jordan J.</div>
+					<div id="userLevel">Administrayor</div>
+				</div>
+				<div id="downRow">∨</div>
 			</div>
-			<div class="h_line"></div>
-			<div class="mesContent">
-				<div class="leftList">
-					<div class="searchContent">
-						<div class="search_C">
-							<input id="searchInput" type="text" placeholder="Search" />
-							<input id="searchBtn" type="button" onclick="search()" />
-						</div>
-					</div>
-					<ul>
+		</div>
+		<!--搜索框-->
+		<div class="searchContent">
+			<div class="search_C">
+				<input id="searchInput" type="text" placeholder="Search" />
+				<input id="searchBtn" type="button" onclick="search()" />
+			</div>
+		</div>
+		<!--左侧联系人列表-->
+		<div class="leftList">
+			
+			<ul>
 						<li class="cell cellActive">
 							<div class="cellTitle">
 								<div class="cell_user">
@@ -172,24 +175,185 @@
 							</div>
 						</li>
 					</ul>
-				</div>
-				<div class="rightMsDetail">
-					<div class="rightTop">
-						<div class="currentUser">
-							<div class="c_u_Name">Bessie Berry</div>
-							<div class="c_u_circle"></div>
-						</div>
-					</div>
-					
-					<div class="rightContent">
-					
-					</div>
-					
-					<div class="rightFooter">
-						
-					</div>
-				</div>
+		</div>
+		
+		<!--右侧消息顶部信息-->
+		<div class="rightTop">
+			<div class="currentUser">
+				<div class="c_u_Name">Bessie Berry</div>
+				<div class="c_u_circle"></div>
 			</div>
 		</div>
+		
+		<div class="rightContent">
+			<section class="messageSection">
+				<ul>
+					<li class="messageCell">
+						<div class="msg_leftUser">
+							<img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3531944213,819437683&fm=27&gp=0.jpg" />
+						</div>
+						<div class="msg_rightCont">
+							<div class="msg_Name_Time">
+								<div class="msg_uname">
+									Bessie Berry
+								</div>
+								<div class="msg_time">
+									8:31 AM
+								</div>
+							</div>
+							<div class="msg_rightTxt">第九天到第十一天，来做一个漂亮的网站 课程目标 经过前面八天的练习，我们基本把HTML和CSS的基本知识进行了一遍学习，新的任务，将会用三天的时间，来学习如何将一个设计稿转化为网页，通过这个过程实战我们之前学到的各种CSS知识。 课程描述 复习 首先对上一个任务进行复习，如果还没有完成上一课任务的同学，请先完成上一个任务。 阅读 按照设计师提供的设计稿</div>
+						</div>
+					</li>
+				</ul>
+			</section>
+			<div class="msg_line msg_line_active">
+				<div class="v_line"></div>
+				<p><span class="msg_showTimeTxt">New Messages</span></p>
+			</div>
+			
+			<section class="messageSection">
+				<ul>
+					<li class="messageCell">
+						<div class="msg_leftUser">
+							<img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3531944213,819437683&fm=27&gp=0.jpg" />
+						</div>
+						<div class="msg_rightCont">
+							<div class="msg_Name_Time">
+								<div class="msg_uname">
+									Bessie Berry
+								</div>
+								<div class="msg_time">
+									8:31 AM
+								</div>
+							</div>
+							<div class="msg_rightTxt">了一遍学习，新的任务，将会用三天的时间，来学习如何将一个设计稿转化为网页，通过这个过程实战我们之前学到的各种CSS知识。 课程描述 复习 首先对上一个任务进行复习，如果还没有完成上一课任务的同学，请先完成上一个任务。 阅读 按照设计师提供的设计稿</div>
+						</div>
+					</li>
+					
+					<li class="messageCell">
+						<div class="msg_leftUser">
+							<img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3602444084,3137231020&fm=27&gp=0.jpg" />
+						</div>
+						<div class="msg_rightCont">
+							<div class="msg_Name_Time">
+								<div class="msg_uname">
+									Jordan Jackson
+								</div>
+								<div class="msg_time">
+									8:31 AM
+								</div>
+							</div>
+							<div class="msg_rightTxt">第九天到第十一天，来做一个漂亮的网站 课程目标 经过前面八天的练习，我们基本把HTML和CSS的基本知识进行了一遍学习，新的任务，将会用三天的时间，来学习如何将一个设计稿转化为网页，通过这个过程实战我们之前学到的各种CSS知识。 课程描述 复习 首先对上一个任务进行复习，如果还没有完成上一课任务的同学，请先完成上一个任务。 阅读 按照设计师提供的设计稿</div>
+							<div class="msg_imgList">
+								<img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1015579653,3259906401&fm=200&gp=0.jpg" />
+								<img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1433138564,2539084874&fm=200&gp=0.jpg" />
+							</div>
+						</div>
+					</li>
+				</ul>
+			</section>
+			<div class="msg_line">
+				<div class="v_line"></div>
+				<p><span class="msg_showTimeTxt">Tusday</span></p>
+			</div>
+			
+			<section class="messageSection">
+				<ul>
+					<li class="messageCell">
+						<div class="msg_leftUser">
+							<img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3531944213,819437683&fm=27&gp=0.jpg" />
+						</div>
+						<div class="msg_rightCont">
+							<div class="msg_Name_Time">
+								<div class="msg_uname">
+									Bessie Berry
+								</div>
+								<div class="msg_time">
+									8:31 AM
+								</div>
+							</div>
+							<div class="msg_rightTxt">了一遍学习，新的任务，将会用三天的时间，来学习如何将一个设计稿转化为网页，通过这个过程实战我们之前学到的各种CSS知识。 课程描述 复习 首先对上一个任务进行复习，如果还没有完成上一课任务的同学，请先完成上一个任务。 阅读 按照设计师提供的设计稿</div>
+						</div>
+					</li>
+					
+					<li class="messageCell">
+						<div class="msg_leftUser">
+							<img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3602444084,3137231020&fm=27&gp=0.jpg" />
+						</div>
+						<div class="msg_rightCont">
+							<div class="msg_Name_Time">
+								<div class="msg_uname">
+									Jordan Jackson
+								</div>
+								<div class="msg_time">
+									8:31 AM
+								</div>
+							</div>
+							<div class="msg_rightTxt">第九天到第十一天，来做一个漂亮的网站 课程目标 经过前面八天的练习，我们基本把HTML和CSS的基本知识进行了一遍学习，新的任务，将会用三天的时间，来学习如何将一个设计稿转化为网页，通过这个过程实战我们之前学到的各种CSS知识。 课程描述 复习 首先对上一个任务进行复习，如果还没有完成上一课任务的同学，请先完成上一个任务。 阅读 按照设计师提供的设计稿</div>
+							<div class="msg_imgList">
+								<img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1015579653,3259906401&fm=200&gp=0.jpg" />
+								<img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1433138564,2539084874&fm=200&gp=0.jpg" />
+							</div>
+						</div>
+					</li>
+				</ul>
+			</section>
+			<div class="msg_line">
+				<div class="v_line"></div>
+				<p><span class="msg_showTimeTxt">Tusday</span></p>
+			</div>
+			
+			<section class="messageSection">
+				<ul>
+					<li class="messageCell">
+						<div class="msg_leftUser">
+							<img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3531944213,819437683&fm=27&gp=0.jpg" />
+						</div>
+						<div class="msg_rightCont">
+							<div class="msg_Name_Time">
+								<div class="msg_uname">
+									Bessie Berry
+								</div>
+								<div class="msg_time">
+									8:31 AM
+								</div>
+							</div>
+							<div class="msg_rightTxt">了一遍学习，新的任务，将会用三天的时间，来学习如何将一个设计稿转化为网页，通过这个过程实战我们之前学到的各种CSS知识。 课程描述 复习 首先对上一个任务进行复习，如果还没有完成上一课任务的同学，请先完成上一个任务。 阅读 按照设计师提供的设计稿</div>
+						</div>
+					</li>
+					
+					<li class="messageCell">
+						<div class="msg_leftUser">
+							<img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3602444084,3137231020&fm=27&gp=0.jpg" />
+						</div>
+						<div class="msg_rightCont">
+							<div class="msg_Name_Time">
+								<div class="msg_uname">
+									Jordan Jackson
+								</div>
+								<div class="msg_time">
+									8:31 AM
+								</div>
+							</div>
+							<div class="msg_rightTxt">第九天到第十一天，来做一个漂亮的网站 课程目标 经过前面八天的练习，我们基本把HTML和CSS的基本知识进行了一遍学习，新的任务，将会用三天的时间，来学习如何将一个设计稿转化为网页，通过这个过程实战我们之前学到的各种CSS知识。 课程描述 复习 首先对上一个任务进行复习，如果还没有完成上一课任务的同学，请先完成上一个任务。 阅读 按照设计师提供的设计稿</div>
+							<div class="msg_imgList">
+								<img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1015579653,3259906401&fm=200&gp=0.jpg" />
+								<img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1433138564,2539084874&fm=200&gp=0.jpg" />
+							</div>
+						</div>
+					</li>
+				</ul>
+			</section>
+			<div class="msg_line">
+				<div class="v_line"></div>
+				<p><span class="msg_showTimeTxt">Tusday</span></p>
+			</div>
+			
+		</div>
+		
+		<div class="rightFooter">
+			
+		</div>
+		
 	</body>
 </html>

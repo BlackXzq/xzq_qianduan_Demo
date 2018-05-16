@@ -5,7 +5,7 @@
 }
 
 body {
-	min-width: 600px;
+	min-width: 900px;
 }
 
 .appLink {
@@ -13,14 +13,14 @@ body {
 	width: 100px;
 	height: 100%;
 	background-color: #171C25;
-	z-index: 2;
+	z-index: 10;
 }
 
 .appLinkFrame {
 	border: none;
 	width: 100%;
 	height: 100%;
-	z-index: 2;
+	z-index: 10;
 }
 
 .nav {
@@ -29,7 +29,7 @@ body {
 	width: 250px;
 	height: 100%;
 	background-color: #1A212E;
-	z-index: 1;
+	z-index: 9;
 }
 
 .navContentFrame {
@@ -38,15 +38,16 @@ body {
 	height: 100%;
 }
 
-.content {
-	margin-left: 350px;
-	width: calc(100%-350px);
-	height: 100%;
-}
-
 .header {
+	position: fixed;
+	left: 350px;
+	top: 0px;
+	right: 0px;
+	z-index: 8;
 	height: 90px;
 	padding: 20px;
+	background-color: white;
+	border-bottom: 1px solid #ddd;
 	box-sizing: border-box;
 	display: flex;
 	justify-content: space-between;
@@ -69,6 +70,13 @@ body {
 	border-radius: 50%;
 	background-color: #5F9EA0;
 }
+.userIcon img {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
 .userDetail {
 	margin: 0 10px;
 }
@@ -88,32 +96,26 @@ body {
 	color: #1B7DE7;
 }
 
-.h_line {
-	width: 100%;
-	height: 0.5px;
-	background-color: #ddd;
-}
-.mesContent {
-	display: flex;
-	flex-direction: row;
-}
-.leftList {
-	width: 400px;
-	height: 100%;
-	border-right: 1px solid #ddd;
-	flex-shrink: 1;
-}
 .searchContent {
+	position: fixed;
+	left: 350px;
+	top: 90px;
+	width: 400px;
 	border-bottom: 1px solid #ddd;
+	border-right: 1px solid #ddd;
 	padding: 18px 30px;
-	height: 71px;
+	height: 70px;
 	box-sizing: border-box;
+	background-color: white;
+	z-index: 8;
 }
 .search_C {
 	width: 100%;
 	height: 100%;
 	display: flex;
 	border: 1px solid #ddd;
+	border-radius: 5px;
+	overflow: hidden;
 }
 .searchContent input {
 	border: none;
@@ -129,6 +131,22 @@ body {
 #searchBtn {
 	width: 15%;
 	background-color: #008000;
+}
+
+.mesContent {
+	display: flex;
+	flex-direction: row;
+}
+.leftList {
+	position: relative;
+	top: 160px;
+	left: 350px;
+	bottom: 0px;
+	width: 400px;
+	border-right: 1px solid #ddd;
+	box-sizing: border-box;
+	z-index: 5;
+	background-color: white;
 }
 
 .cell {
@@ -212,27 +230,20 @@ body {
 	flex-shrink: 0;
 }
 
-.rightMsDetail {
-	width: 100%;
-	height: calc(100%-90px);
-	min-width: 500px;
-	min-height: 500px;
-	flex-shrink: 2;
-	position: relative;
-}
-
 .rightTop {
-	position: absolute;
-	left: 0px;
-	top: 0px;
+	position: fixed;
+	left: 750px;
+	top: 90px;
 	right: 0px;
 	border-bottom: 1px solid #ddd;
 	padding: 18px 30px;
-	height: 71px;
+	height: 70px;
 	box-sizing: border-box;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	background-color: white;
+	z-index: 7;
 }
 .currentUser {
 	display: flex;
@@ -253,23 +264,126 @@ body {
 }
 
 .rightContent {
-	position: absolute;
-	top: 109px;
-	left: 0px;
+	/*float: right;*/
+	position: fixed;
+	top: 160px;
+	left: 750px;
 	right: 0px;
-	bottom: 80px;
+	bottom: 90px;
+	z-index: 2;
+	display: flex;
+	flex-direction: column-reverse;
 }
 
+.msg_line {
+	margin-top: 20px;
+}
+
+.v_line {
+	width: 100%;
+	height: 1px;
+	background-color: #ddd;
+	text-align: center;
+}
+.msg_line p {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	float: left;
+	transform: translateY(-50%);
+}
+
+.msg_line.msg_line_active .v_line {
+	background-color: #1B7DE7;
+}
+.msg_line.msg_line_active .msg_showTimeTxt{
+	color: #1B7DE7;
+}
+.msg_showTimeTxt {
+	color: #999;
+	background-color: white;
+	padding: 0 20px;
+	width: 150px;
+	margin:0px auto;
+}
+
+.messageSection {
+	padding: 0px 20px;
+	box-sizing: border-box;
+}
+
+.messageCell {
+	display: flex;
+	margin-bottom: 20px;
+}
+.messageCell:last-child {
+	margin-bottom: 0px;
+}
+.msg_leftUser {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: #008000;
+	margin-right: 15px;
+	flex-shrink: 1;
+}
+.msg_leftUser img {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	border-radius: 50%;
+}
+.msg_rightCont {
+	flex-shrink: 10;
+}
+.msg_Name_Time {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+.msg_uname {
+	color: #999;
+	font-size: 14px;
+	font-weight: bold;
+	margin-right: 10px;
+}
+.msg_time {
+	color: #bbb;
+	font-size: 12px;
+	font-weight: bold;
+}
+.msg_rightTxt {
+	font-size: 12px;
+	color: #aaa;
+}
+.imageList {
+	display: flex;
+}
+.msg_imgList img {
+	width: 100px;
+	height: 70px;
+	margin: 15px 10px 0px 0px;
+	border-radius: 5px;
+}
+
+
 .rightFooter {
-	position: absolute;
+	position: fixed;
 	padding: 30px;
 	height: 80px;
-	left: 0;
+	left: 750px;
 	bottom: 0;
 	right: 0;
 	box-sizing: border-box;
 	background-color: #00CED1;
+	z-index: 8;
 }
+
+
+
+
+
+
 
 
 
