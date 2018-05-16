@@ -45,8 +45,9 @@ body {
 }
 
 .header {
-	/*margin: 20px;*/
+	height: 90px;
 	padding: 20px;
+	box-sizing: border-box;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -94,10 +95,13 @@ body {
 }
 .mesContent {
 	display: flex;
+	flex-direction: row;
 }
 .leftList {
 	width: 400px;
+	height: 100%;
 	border-right: 1px solid #ddd;
+	flex-shrink: 1;
 }
 .searchContent {
 	border-bottom: 1px solid #ddd;
@@ -210,9 +214,10 @@ body {
 
 .rightMsDetail {
 	width: 100%;
-	height: 100%;
+	height: calc(100%-90px);
 	min-width: 500px;
 	min-height: 500px;
+	flex-shrink: 2;
 	position: relative;
 }
 
@@ -254,7 +259,6 @@ body {
 	right: 0px;
 	bottom: 80px;
 }
-
 
 .rightFooter {
 	position: absolute;
