@@ -90,6 +90,8 @@ body {
 #downRow {
 	margin-left: 10px;
 	color: #999;
+	font-size: 20px;
+	font-weight: bold;
 }
 
 #downRow:hover {
@@ -129,8 +131,14 @@ body {
 	outline: none; 
 }
 #searchBtn {
-	width: 15%;
-	background-color: #008000;
+	position: absolute;
+    right: 44px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: #a7b0c0;
+    cursor: pointer;
+    transition: color 1s;
 }
 
 .leftList {

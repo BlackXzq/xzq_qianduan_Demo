@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<link rel="stylesheet" href="font_540466_df5s5ymyn4br19k9/iconfont.css" />
+	 <style>  
+        p {  
+            font-size: 30px;  
+        }  
+  
+  @font-face {
+  font-family: 'iconfontX';  /* project id 670239 */
+  src: url('//at.alicdn.com/t/font_670239_54f0w7gs0vpwrk9.eot');
+  src: url('//at.alicdn.com/t/font_670239_54f0w7gs0vpwrk9.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_670239_54f0w7gs0vpwrk9.woff') format('woff'),
+  url('//at.alicdn.com/t/font_670239_54f0w7gs0vpwrk9.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_670239_54f0w7gs0vpwrk9.svg#iconfont') format('svg');
+}
+		.iconfontX {
+			font-family:"iconfontX" !important;
+  			font-size:19px;
+  			font-style:normal;
+  			-webkit-font-smoothing: antialiased;
+  			-moz-osx-font-smoothing: grayscale;
+		}
+  
+        .myfont::before {  
+            content: "\e607";  /* 也可以通过伪元素的content添加图标字体(将"&#x"变成"\") */  
+            /*font-family: 'webfont';*/  
+        }  
+        .myTitle:before {
+       	 	content: "\f03d";
+        }
+        
+        .myTitle:after {
+        		content: "\e655";
+        }
+        .divs::before {
+        		font-family: 'iconfont';
+			content: "\e655";
+        }
+  
+     </style>  
+	<body>
+		<h1 class="myTitle">测试</h1>
+		<p class="myfont"><em class="iconfontX search"></em>文字文字文字文字文字文字</p>  
+		<div class="divs">123</div>
+	</body>
+</html>
