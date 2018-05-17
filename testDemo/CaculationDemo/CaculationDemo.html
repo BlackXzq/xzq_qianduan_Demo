@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>IFE ECMAScript</title>
+	</head>
+	<body>
+		<input id="first-number" type="number" value="0" placeholder="第一个数字">
+    		<input id="second-number" type="number" value="0" placeholder="第二个数字">
+    		<button id="add-btn">加</button>
+    		<button id="minus-btn">减</button>
+    		<button id="times-btn">乘</button>
+    		<button id="divide-btn">除</button>
+   		<p id="result">运算结果</p>
+	</body>
+	<script>
+		//获取id标签元素
+		function $(id) {
+			return document.getElementById(id);
+		}
+		//页面初始化
+		window.onload = function() {
+			initOnclick();
+		}
+		//初始化button绑定事件
+		function initOnclick() {
+			var addBtn = $("add-btn");
+			initButtonClick(addBtn, "+");
+			
+			var minBtn = $("minus-btn");
+			initButtonClick(minBtn, "-");
+			
+			var timeBtn = $("times-btn");
+			initButtonClick(timeBtn, "*");
+			
+			var divBtn = $("divide-btn");
+			initButtonClick(divBtn, "/");
+		}
+		//添加btn事件
+		function initButtonClick (el, type) {
+			el.addEventListener("click",calcuClick.bind(el, type), false);
+		}
+		//计算操作
+		function calcuClick(type) {
+			var resultEl = $("result");
+			var leftNum = parseFloat($("first-number").value);
+			var rightNum = parseFloat($("second-number").value);
+			var resultValue = "";
+			switch(type){
+				case "+": 
+					resultValue = leftNum + " "+type+" "  + rightNum + " = " + (leftNum+rightNum);
+				break;
+				case "-":
+					resultValue = leftNum + " "+type+" "  + rightNum + " = " + (leftNum-rightNum);
+				break;
+				case "*":
+					resultValue = leftNum + " "+type+" "  + rightNum + " = " + (leftNum*rightNum);
+				break;
+				case "/":
+					resultValue = leftNum + " "+type+" "  + rightNum + " = " + (leftNum/rightNum);
+				break;
+			}
+			resultEl.innerHTML = "运算结果: "+resultValue;
+		}
+		
+	</script>
+</html>

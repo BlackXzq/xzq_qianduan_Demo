@@ -38,6 +38,8 @@
 			<h3>项目经历</h3>
 			<p><span>人类简史</span><br />主要项目开发工程师，项目经理</p>
 			<p><span>BaiDu</span><br />参与百度搜索引擎的开发</p>
+			<h3 class="enjoy" onclick="tapEnjoy()">特殊爱好，点击看一下</h3>
+			<p id="enjoyContent">喜欢语言学习；爱运动，乒乓和网球；性格外向，乐于交朋友。</p>
 		</div>
 		<div class="content-resume resume2back" id="content-resume2">
 			<div class="resume2content">
@@ -117,6 +119,18 @@
 	</body>
 	
 	<script>
+		
+		function tapEnjoy() {
+			var enEl = document.getElementById("enjoyContent");
+			var displayValue = enEl.style.display;
+			if(!displayValue || displayValue == "none"){
+				document.getElementsByClassName("enjoy")[0].innerHTML = "点击我可以隐藏哦";
+				document.getElementById("enjoyContent").style.display = "block";
+			} else {
+				document.getElementsByClassName("enjoy")[0].innerHTML = "特殊爱好，点击看一下";
+				document.getElementById("enjoyContent").style.display = "none";
+			}
+		}
 		
 		function gotoResume(el) {
 			

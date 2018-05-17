@@ -106,3 +106,15 @@ span {
 	width: 100%;
 	border-bottom: 1px solid #eee;
 }
+
+.enjoy {
+	color: #008000;
+}
+
+.enjoy:hover {
+	color: #A71D5D;
+}
+
+#enjoyContent {
+	display: none;
+}
