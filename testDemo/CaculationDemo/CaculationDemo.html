@@ -2,15 +2,26 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>IFE ECMAScript</title>
+		<title>Black ECMAScript</title>
 	</head>
 	<style>
-		.calcuSection, .transDec{
+		body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		#welcomeH {
+			margin: 30px auto 0px;
+		}
+		.sectionItem{
 			width: 600px;
-			margin: 50px;
+			margin-top: 50px;
 			padding: 20px;
 			box-sizing: border-box;
 			border: 1px solid #ddd;
+		}
+		.sectionItem.jiujiuItem {
+			width: 800px;
 		}
 		.calcuSection button {
 			width: 30px;
@@ -23,9 +34,24 @@
 		#bin-bit {
 			width: 200px;
 		}
+		#showTip {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+		}
+		#showTip p {
+			margin-right: 20px;
+		}
+		tr td {
+			width: 300px;
+			text-align: center;
+			border: 1px solid #ddd;
+		}
+		
 	</style>
 	<body>
-		<section class="calcuSection">
+		<h1 id="welcomeH">Welcome</h1>
+		<section class="sectionItem calcuSection">
 			<h3>加减乘除计算器</h3>
 			<input id="first-number" type="number" value="0" placeholder="第一个数字">
     			<input id="second-number" type="number" value="0" placeholder="第二个数字"><br />
@@ -35,12 +61,26 @@
     			<button id="divide-btn">除</button>
    			<p id="result">运算结果</p>
 		</section>
-		<section class="transDec">
+		<section class="sectionItem transDec">
 			<h3>十进制转化为二进制</h3>
 			<input id="dec-number" type="number" placeholder="输入一个十进制非负整数">
-			 <input id="bin-bit" type="number" placeholder="输入转化后二进制数字位数">
+			<input id="bin-bit" type="number" placeholder="输入转化后二进制数字位数">
     			<button id="trans-btn">转化为二进制</button>
     			<p id="trans-result">运算结果</p>
+		</section>
+		<section class="sectionItem threeGame">
+			<h3>3的小游戏</h3>
+			<div id="showTip">
+				<p>输出1-100中包含3或3的倍数的数字</p>
+				<button id="input3-btn">输出</button>
+			</div>
+			<p id="showResult"></p>
+		</section>
+		<section class="sectionItem jiujiuItem">
+			<h3>九九乘法表</h3>
+			<table id="jiujiuTable">
+				
+			</table>
 		</section>
 	</body>
 	<script>
@@ -50,8 +90,26 @@
 		}
 		//页面初始化
 		window.onload = function() {
+			welcomefunc();
 			initOnclick();
+			jiujiu();
 		}
+		function welcomefunc() {
+			var hh = $("welcomeH");
+			var myDate = new Date();
+			var hours = myDate.getHours();       //获取当前小时数(0-23)
+			var showMessage = "Hi, friends Welcome "
+			
+			if(6<hours&&hours<12) {
+				showMessage += "上午好";
+			} else if(12<=hours&&hours<18) {
+				showMessage += "下午好";
+			} else {
+				showMessage += "晚上好";
+			}
+			hh.innerHTML = showMessage;
+		}
+		
 		//初始化button绑定事件
 		function initOnclick() {
 			var addBtn = $("add-btn");
@@ -68,6 +126,9 @@
 			
 			var transBtn = $("trans-btn");
 			transBtn.addEventListener("click", transBtnClick, false);
+			
+			var threeBtn = $("input3-btn");
+			threeBtn.addEventListener("click", showThreeMessage, false);
 		}
 		//添加btn事件
 		function initButtonClick (el, type) {
@@ -135,8 +196,43 @@
 			}
 			resultEl.innerHTML = "运算结果: "+resultValue;
 		}
-		
-		
+		//显示3 3的倍数游戏
+		function showThreeMessage() {
+			var showMsgEl = $("showResult");
+			var resultValue = "";
+			for (var i=1; i<=100; i++) {
+				if (i%3 == 0){
+					if(resultValue.length ==0) {
+						resultValue += i;  
+					} else {
+						resultValue += ("  " + i); 	
+					} 
+				} else {
+					var tempstr = i.toString();
+					if(tempstr.indexOf("3") != -1) {
+						resultValue += ("   " + tempstr);
+					}
+				}
+			}
+			showMsgEl.innerHTML = resultValue;
+		}
+		//九九乘法表
+		function jiujiu() {
+			var table = $("jiujiuTable");
+			var fragment = document.createDocumentFragment();
+			for (var i=1; i<10; i++) {
+				var trel = document.createElement("tr");
+				for (var j=1; j<=i; j++) {
+					var value = "  " + j + " x " + i + " = " + (i*j) + "  ";
+					console.log(value);
+					var tdel = document.createElement("td");
+					tdel.appendChild(document.createTextNode(value));
+					trel.appendChild(tdel);
+				}
+				fragment.appendChild(trel);
+			}
+			table.appendChild(fragment);
+		}
 		
 	</script>
 </html>
