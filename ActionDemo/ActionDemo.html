@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>和页面对话</title>
+	</head>
+	<link rel="stylesheet" href="ActionDemo.css" />
+	<body>
+		<div id="contanier">
+			<section class="sectionItem">
+				<h3>获取输入框内容</h3>
+				<input id="name" type="text">    
+				<button id="submit-btn">Submit</button>
+				<p id="showName"></p>
+			</section>
+			
+			<section class="sectionItem">
+				<h4>控制元素的显示及隐藏</h4>
+				 <label for="school">
+        				<input id="school" name="status" type="radio">
+       			 	School
+    				</label>
+    				<label for="company">
+       				<input id="company" name="status" type="radio">
+        				Company
+    				</label><br /><br />
+
+    				<select id="school-select">        
+       				<option>北京邮电大学</option>
+        				<option>黑龙江大学</option>
+        				<option>华中科技大学</option>
+    				</select>
+
+    				<select id="company-select">        
+        				<option>百度</option>
+        				<option>爱奇艺</option>        
+    				</select>
+			</section>
+			
+			<section class="sectionItem">
+				<h4>点击标签，获取背景颜色</h4>
+				<ul class="palette">
+        				<li style="background-color:crimson"></li>
+        				<li style="background-color:bisque"></li>
+        				<li style="background-color:blueviolet"></li>
+        				<li style="background-color:coral"></li>
+        				<li style="background-color:chartreuse"></li>
+        				<li style="background-color:darkolivegreen"></li>
+        				<li style="background-color:cyan"></li>
+        				<li style="background-color:#194738"></li>        
+    				</ul>
+   				<p class="color-picker"></p>
+			</section>
+			
+			<section class="sectionItem">
+				<div id="fade-obj"></div>
+				<button id="fade-btn">淡出</button>
+			</section>
+			
+		</div>
+	</body>
+	<script type="text/javascript" src="ActionDemo.js" ></script>
+</html>
