@@ -10,6 +10,7 @@ function initData() {
 	showSelectedOption();
 	getLiElementBackColor();
 	fadeInOut();
+	animationImg()
 }
 
 //实现demo1 中显示输入内容
@@ -109,4 +110,18 @@ function fadeInOut() {
 			}
 		}, 50);
 	}
+}
+/**
+ *  动画照片
+ */
+function animationImg() {
+	var divE = document.querySelector(".animationImg");
+	var step = -480, y = 0;
+	setInterval(function(){
+		y += step;
+		if(y == -7680 || y == 0) {
+			step = -step;
+		}
+		divE.style.backgroundPositionY = y + "px";
+	}, 100);
 }
