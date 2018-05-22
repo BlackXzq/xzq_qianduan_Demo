@@ -351,13 +351,13 @@ var menuArr = [
 var showOAEl = document.getElementById("ObjectwithArray");
 
 function Object2Array() {
-	
-}
-
-function calOb2(Obj) {
-	if(obj.length > 0) {
-		
+	var temArray = [];
+	for(key in scoreObject) {
+		var obj = scoreObject[key];
+		temArray.push([key, obj.Math, obj.English, obj.Music]);
 	}
+	console.log(temArray);
+	showOAEl.innerHTML = temArray;
 }
 
 function Array2Object() {
