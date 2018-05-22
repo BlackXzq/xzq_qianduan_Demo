@@ -5,11 +5,13 @@ window.onload = function() {
 
 function initData() {
 	showNowTime();
+	showSelectedTime();
 }
 
 /**
  * 设置当前时间显示
  * 格式为 YYYY 年 MM 月 DD 日 星期 D HH:mm:ss
+ * 2008-10-10 Monday 07:10:30 PM
  */
 
 function showNowTime() {
@@ -25,11 +27,12 @@ function showNowTime() {
 		var seconds = nowDate.getSeconds();
 		showDateE.innerHTML = formatDate(getDateYMD(year, month, nDate), getWeekNum(weekD), getDetailTime(hours, minutes, seconds))
 	};
-	setTimeout(getDate, 1000);
+	getDate();
+	setInterval(getDate, 1000);
 }
 
 function formatDate(YMD, Week, HMS) {
-	return YMD + " " + Week + " " + HMS;
+	return YMD + "  " + Week + "  " + HMS;
 }
 
 //获取年月日
@@ -76,4 +79,80 @@ function filledNum(value) {
 		return "0"+value.toString();
 	}
 	return value.toString();
+}
+
+/**
+ * 选择日期
+ */
+
+function showSelectedTime() {
+	initUseData("year-select", 2000, 2032);
+	initUseData("month-select", 1, 12);
+	var dayss = new Date(2000,1,0);
+	initUseData("day-select", 1, dayss.getDate());
+	initUseData("hour-select", 0, 23);
+	initUseData("minite-select", 0, 59);
+	initUseData("second-select", 0, 59);
+	getCurrentSeleteTime();
+	 
+	var selectEs = document.querySelectorAll(".sectionItem select");
+//	console.log(selectEs);
+	for (var i=0, len = selectEs.length; i<len; i++) {
+		var currentSelect = selectEs[i];
+		currentSelect.onchange = function() {
+			getCurrentSeleteTime();
+		}
+	}
+}
+
+function getCurrentSeleteTime() {
+	initDatedays();
+	var yearS = document.getElementById("year-select");
+	var years = yearS.value;
+	var monthS = document.getElementById("month-select");
+	var months = monthS.value;
+	var dayS = document.getElementById("day-select");
+	var days = dayS.value;
+	var hourS = document.getElementById("hour-select");
+	var hours = hourS.value;
+	var miniteS = document.getElementById("minite-select");
+	var minites = miniteS.value;
+	var secondS = document.getElementById("second-select");
+	var seconds = secondS.value;
+	
+	
+	console.log(years+"-"+months+"-"+days+" "+hours+":"+minites+":"+seconds);
+}
+
+function initDatedays() {
+	var yearS = document.getElementById("year-select");
+	var years = yearS.value;
+	var monthS = document.getElementById("month-select");
+	var months = monthS.value;
+	var dayS = document.getElementById("day-select");
+	var days = dayS.value;
+	
+	var dayss = new Date(years,months,0);
+	initUseData("day-select", 1, dayss.getDate());
+	dayS = document.getElementById("day-select");
+	if(dayS.length < days) {
+		dayS.value = 1;
+	} else {
+		dayS.value = days;
+	}
+	
+}
+
+function initUseData(id, min, max) {
+	var ifragement = document.createDocumentFragment();
+	var yearSE = document.getElementById(id);
+	yearSE.innerHTML = "";
+	for (var i=min; i<=max; i++) {
+		var option = document.createElement("option");
+		option.setAttribute("value", i);
+		var note = document.createTextNode(i.toString());
+		option.appendChild(note);
+		ifragement.appendChild(option);
+	}
+	yearSE.appendChild(ifragement);
 }
