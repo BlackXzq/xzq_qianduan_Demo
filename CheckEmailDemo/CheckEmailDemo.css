@@ -1,0 +1,17 @@
+
+body {
+	display: flex;
+	justify-content: center;
+}
+
+.wrapper {
+	margin: 50px 20px;
+	padding: 20px;
+	border: 1px solid #ddd;
+}
+
+ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
