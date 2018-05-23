@@ -66,6 +66,14 @@ function filledNum(value) {
  * 选择日期
  */
 
+var yearS = document.getElementById("year-select");
+var monthS = document.getElementById("month-select");
+var dayS = document.getElementById("day-select");
+var hourS = document.getElementById("hour-select");
+var miniteS = document.getElementById("minite-select");
+var secondS = document.getElementById("second-select");
+var pEl = document.getElementById("result-wrapper");
+
 function showSelectedTime() {
 	initUseData("year-select", 2000, 2032);
 	initUseData("month-select", 1, 12);
@@ -90,14 +98,12 @@ function showSelectedTime() {
 }
 //计算组合时间格式内容
 function showPaddingTimeMessge() {
-	var pe = document.getElementById("result-wrapper");
 	var selectTime = getCurrentSeleteTime();
 	var message = "现在距离  " + getFormateTime(selectTime) + "  " + calcutePaddingDMS(selectTime);
-	pe.innerHTML = message;
+	pEl.innerHTML = message;
 }
 
 function calcutePaddingDMS(selectTime) {
-	
 	var nowdate = new Date();
 	var nowTimes = nowdate.getTime();
 	var selectTimes = selectTime.getTime();
@@ -151,17 +157,11 @@ function handlertimes(times) {
 
 //获取当前选中的时间
 function getCurrentSeleteTime() {
-	var yearS = document.getElementById("year-select");
 	var years = yearS.value;
-	var monthS = document.getElementById("month-select");
 	var months = monthS.value;
-	var dayS = document.getElementById("day-select");
 	var days = dayS.value;
-	var hourS = document.getElementById("hour-select");
 	var hours = hourS.value;
-	var miniteS = document.getElementById("minite-select");
 	var minites = miniteS.value;
-	var secondS = document.getElementById("second-select");
 	var seconds = secondS.value;
 	
 	var selectDate = new Date(years, (months-1), days, hours, minites, seconds);
@@ -170,10 +170,8 @@ function getCurrentSeleteTime() {
 
 //修改年份 月份后 更新该月份有多少天
 function initDatedays() {
-	var dayS = document.getElementById("day-select");
 	var days = dayS.value;
 	initUseData("day-select", 1, getCurrentYMHaveDays());
-	dayS = document.getElementById("day-select");
 	if(dayS.length < days) {
 		dayS.value = 1;
 	} else {
@@ -198,9 +196,7 @@ function initUseData(id, min, max) {
 
 //获取当前年份月份下 有多少天
 function getCurrentYMHaveDays() {
-	var yearS = document.getElementById("year-select");
 	var years = yearS.value;
-	var monthS = document.getElementById("month-select");
 	var months = monthS.value;
 	var dayss = new Date(years,months,0);
 	return dayss.getDate();
