@@ -18,18 +18,23 @@ function showNowTime() {
 	var showDateE = document.getElementById("dateMake");
 	var getDate = function() {
 		var nowDate = new Date();
-		var year = nowDate.getFullYear();
-		var month = nowDate.getMonth();
-		var nDate = nowDate.getDate();
-		var weekD = nowDate.getDay();
-		var hours = nowDate.getHours();
-		var minutes = nowDate.getMinutes();
-		var seconds = nowDate.getSeconds();
-		showDateE.innerHTML = formatDate(getDateYMD(year, month, nDate), getWeekNum(weekD), getDetailTime(hours, minutes, seconds))
+		showDateE.innerHTML = getFormateTime(nowDate);
 	};
 	getDate();
 	setInterval(getDate, 1000);
 }
+
+function getFormateTime (useDate) {
+	var year = useDate.getFullYear();
+	var month = useDate.getMonth();
+	var nDate = useDate.getDate();
+	var weekD = useDate.getDay();
+	var hours = useDate.getHours();
+	var minutes = useDate.getMinutes();
+	var seconds = useDate.getSeconds();
+	return  formatDate(getDateYMD(year, month, nDate), getWeekNum(weekD), getDetailTime(hours, minutes, seconds));
+}
+
 
 function formatDate(YMD, Week, HMS) {
 	return YMD + "  " + Week + "  " + HMS;
@@ -42,31 +47,7 @@ function getDateYMD(Y, M, D) {
 
 //获取当前周几
 function getWeekNum(weekday) {
-	var weekStr = "星期日";
-	switch(weekday) {
-		case 0:
-			weekStr = "星期日";
-			break;
-		case 1:
-			weekStr = "星期一";
-			break;
-		case 2:
-			weekStr = "星期二";
-			break;
-		case 3:
-			weekStr = "星期三";
-			break;
-		case 4:
-			weekStr = "星期四";
-			break;
-		case 5:
-			weekStr = "星期五";
-			break;
-		case 6:
-			weekStr = "星期六";
-			break;
-	}
-	return weekStr;
+	return "星期" + "日一二三四五六".charAt(weekday);
 }
 
 function getDetailTime(H, M, S) {
@@ -94,19 +75,82 @@ function showSelectedTime() {
 	initUseData("minite-select", 0, 59);
 	initUseData("second-select", 0, 59);
 	getCurrentSeleteTime();
+	showPaddingTimeMessge();
 	 
 	var selectEs = document.querySelectorAll(".sectionItem select");
-//	console.log(selectEs);
 	for (var i=0, len = selectEs.length; i<len; i++) {
 		var currentSelect = selectEs[i];
 		currentSelect.onchange = function() {
-			getCurrentSeleteTime();
+			if(this.id == "year-select" || this.id == "month-select") {
+				initDatedays();
+			}
+			showPaddingTimeMessge();
 		}
 	}
 }
+//计算组合时间格式内容
+function showPaddingTimeMessge() {
+	var pe = document.getElementById("result-wrapper");
+	var selectTime = getCurrentSeleteTime();
+	var message = "现在距离  " + getFormateTime(selectTime) + "  " + calcutePaddingDMS(selectTime);
+	pe.innerHTML = message;
+}
 
+function calcutePaddingDMS(selectTime) {
+	
+	var nowdate = new Date();
+	var nowTimes = nowdate.getTime();
+	var selectTimes = selectTime.getTime();
+	var paddTimes = nowTimes - selectTimes;
+	var flag = (paddTimes > 0);
+	var resultStr = (flag ? "已经过去 ":"还有 ") + handlertimes(paddTimes);
+	return  resultStr;
+}
+//有时间戳转化成 天/时/分/秒
+function handlertimes(times) {
+	
+	var abstimes = Math.abs(times);	
+	var days = 0;
+	var hours = 0;
+	var minites = 0;
+	var seconds = 0;
+	
+	var dayMesc = (1000*60*60*24);
+	var hourMesc = (1000*60*60);
+	var minMesc = (1000*60);
+	
+	days = parseInt(abstimes / dayMesc);
+	hours = parseInt((abstimes%dayMesc) / hourMesc);
+	minites = parseInt((abstimes%hourMesc) / minMesc);
+    seconds = parseInt((abstimes%minMesc) / 1000);
+    var message = "";
+    
+    console.log(days);
+    console.log(hours);
+    console.log(minites);
+    console.log(seconds);
+    
+   	if(days > 0) {
+   		message += (days + " 天");
+   	}
+   	
+   	if(hours > 0) {
+   		message += (hours + " 小时");
+   	}
+   	
+   	if(minites > 0) {
+   		message += (minites + " 分");
+   	}
+   	
+   	if(seconds > 0) {
+   		message += (seconds + " 秒");
+   	}
+   	
+   	return message;
+}
+
+//获取当前选中的时间
 function getCurrentSeleteTime() {
-	initDatedays();
 	var yearS = document.getElementById("year-select");
 	var years = yearS.value;
 	var monthS = document.getElementById("month-select");
@@ -120,29 +164,24 @@ function getCurrentSeleteTime() {
 	var secondS = document.getElementById("second-select");
 	var seconds = secondS.value;
 	
-	
-	console.log(years+"-"+months+"-"+days+" "+hours+":"+minites+":"+seconds);
+	var selectDate = new Date(years, (months-1), days, hours, minites, seconds);
+	return selectDate;
 }
 
+//修改年份 月份后 更新该月份有多少天
 function initDatedays() {
-	var yearS = document.getElementById("year-select");
-	var years = yearS.value;
-	var monthS = document.getElementById("month-select");
-	var months = monthS.value;
 	var dayS = document.getElementById("day-select");
 	var days = dayS.value;
-	
-	var dayss = new Date(years,months,0);
-	initUseData("day-select", 1, dayss.getDate());
+	initUseData("day-select", 1, getCurrentYMHaveDays());
 	dayS = document.getElementById("day-select");
 	if(dayS.length < days) {
 		dayS.value = 1;
 	} else {
 		dayS.value = days;
 	}
-	
 }
 
+//初始化创建option数据
 function initUseData(id, min, max) {
 	var ifragement = document.createDocumentFragment();
 	var yearSE = document.getElementById(id);
@@ -156,3 +195,14 @@ function initUseData(id, min, max) {
 	}
 	yearSE.appendChild(ifragement);
 }
+
+//获取当前年份月份下 有多少天
+function getCurrentYMHaveDays() {
+	var yearS = document.getElementById("year-select");
+	var years = yearS.value;
+	var monthS = document.getElementById("month-select");
+	var months = monthS.value;
+	var dayss = new Date(years,months,0);
+	return dayss.getDate();
+}
+
