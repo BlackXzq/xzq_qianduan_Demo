@@ -1,4 +1,9 @@
 
+* {
+	margin: 0px;
+	border: 0px;
+}
+
 body {
 	display: flex;
 	justify-content: center;
@@ -10,8 +15,28 @@ body {
 	border: 1px solid #ddd;
 }
 
-ul {
-	list-style: none;
-	margin: 0px;
+.wrapper input {
+	width: 300px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 25px;
+	border: 1px solid #ddd;
+}
+
+.wrapper ul {
 	padding: 0px;
+	width: 300px;
+	list-style: none;
+	border: 1px solid #ddd;
+	border-top: none;
+	display: none;
+}
+.wrapper ul li {
+	width: 299.5px;
+	height: 30px;
+	line-height: 30px;
+	cursor: pointer;
+}
+.wrapper ul li:hover {
+	background-color: #ddd;
 }
